@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.1">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Chasin' Feathers War Room&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Load Tailwind CSS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Load Inter font --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Custom Neon Styles */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #0c0b10; /* Very dark background to make neon pop */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #e5e5e5;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Neon Glow Effect for the Container */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.neon-border {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 4px solid #00ffff; /* Neon Cyan border */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px rgba(0, 255, 255, 0.4);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #1a1a23; /* Dark inner background */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Neon Title Text */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.neon-title {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #ff4500; /* Deep Orange Red */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-shadow: 0 0 5px #ff4500, 0 0 15px rgba(255, 69, 0, 0.8);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: pulse-title 1.5s infinite alternate;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes pulse-title {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>from { opacity: 1; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>to { opacity: 0.8; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Scrollbar styling for chat box */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#chat-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-height: 50vh; /* Make sure chat doesn't get too tall */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow-y: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #333;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #121217;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Custom glow for buttons (to match the neon vibe) */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-neon-primary {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #7c3aed; /* Purple */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px #4f1d96, 0 0 15px rgba(124, 58, 237, 0.7);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.15s;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-neon-primary:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #6d28d9;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px #4f1d96, 0 0 20px rgba(124, 58, 237, 1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Chat bubble styles */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.chat-message {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 8px 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>word-wrap: break-word;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.chat-author {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #00ffff; /* Neon cyan for names */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="p-4 sm:p-8 flex items-center justify-center min-h-screen"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Chat Application Container --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="war-room-app" class="w-full max-w-2xl p-6 rounded-xl neon-border"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1 class="text-4xl font-extrabold text-center mb-6 neon-title"&gt;THE WAR ROOM&lt;/h1&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Setup Screen (Hidden by default) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="setup-screen" class="space-y-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-center text-gray-300"&gt;This name will be attached to all your smack talk.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="text" id="name-display" placeholder="Enter Player Name (e.g., Chivo Chavez)" class="w-full p-3 rounded bg-gray-700 text-white border-none focus:ring-2 focus:ring-cyan-400"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="join-btn" class="w-full p-3 font-bold text-white uppercase rounded btn-neon-primary"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>JOIN THE FIGHT</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p id="status-message" class="text-center text-yellow-500"&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Chat Container (Hidden until logged in) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="chat-container-wrapper" class="hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="chat-container" class="p-4 mb-4 rounded-lg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Messages will be injected here --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex space-x-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="text" id="message-input" placeholder="Enter your smack talk or bet..." class="flex-grow p-3 rounded bg-gray-700 text-white border-none focus:ring-2 focus:ring-cyan-400"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="send-btn" class="p-3 font-bold text-white rounded btn-neon-primary"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Send</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script type="module"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- FIREBASE CONFIG ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// These variables are required for the database connection</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Collection path for the chat room</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const COLLECTION_PATH = `artifacts/${appId}/public/data/war_room_chat`;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// State</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let userName = '';</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- FIREBASE LIBRARIES (Imported via script type="module" tags above) ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>import { getFirestore, collection, query, orderBy, limit, addDoc, onSnapshot, serverTimestamp, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Firebase Instances</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let app;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let db;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let auth;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let authReady = false;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- DOM Elements ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const setupScreen = document.getElementById('setup-screen');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const chatContainerWrapper = document.getElementById('chat-container-wrapper');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const chatContainer = document.getElementById('chat-container');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const joinBtn = document.getElementById('join-btn');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const sendBtn = document.getElementById('send-btn');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const messageInput = document.getElementById('message-input');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const nameInput = document.getElementById('name-display');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const statusMessage = document.getElementById('status-message');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- CORE FUNCTIONS ---</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>async function initFirebase() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Set Firebase logging level to Debug for better troubleshooting</p>
+<p class="p1"><span class="Apple-converted-space">                </span>setLogLevel('Debug');</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// 1. Initialize App</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (!firebaseConfig || !firebaseConfig.projectId) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>console.error("FIREBASE ERROR: firebaseConfig is missing or invalid.");</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>statusMessage.textContent = "CRITICAL: Database configuration missing.";</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>return false;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>app = initializeApp(firebaseConfig);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>db = getFirestore(app);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>auth = getAuth(app);</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// 2. Anonymous Sign In</p>
+<p class="p1"><span class="Apple-converted-space">                </span>await signInAnonymously(auth);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>authReady = true;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return true;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>} catch (error) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>console.error("Firebase Initialization Failed:", error);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>statusMessage.textContent = "CRITICAL: Initialization Failed. Please check console.";</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return false;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function startChatListener() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!authReady) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>statusMessage.textContent = "Error: Authentication not complete.";</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const q = query(</p>
+<p class="p1"><span class="Apple-converted-space">                </span>collection(db, COLLECTION_PATH),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>orderBy('timestamp', 'desc'),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>limit(50) // Load last 50 messages</p>
+<p class="p1"><span class="Apple-converted-space">            </span>);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>onSnapshot(q, (snapshot) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>chatContainer.innerHTML = ''; // Clear existing messages</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const messages = [];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>snapshot.forEach(doc =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>messages.push({ id: doc.id, ...doc.data() });</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Reverse the array to display oldest message at the top</p>
+<p class="p1"><span class="Apple-converted-space">                </span>messages.reverse().forEach(message =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>renderMessage(message);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Scroll to bottom after new messages load</p>
+<p class="p1"><span class="Apple-converted-space">                </span>chatContainer.scrollTop = chatContainer.scrollHeight;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>async function sendMessage() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const text = messageInput.value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!text) return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!authReady) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>statusMessage.textContent = "Error: Authentication not complete. Cannot send message.";</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>await addDoc(collection(db, COLLECTION_PATH), {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>author: userName,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>text: text,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>timestamp: serverTimestamp(),</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>color: auth.currentUser.uid // Use UID for unique user color logic</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">                </span>messageInput.value = ''; // Clear input field</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} catch (error) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>console.error("Error sending message:", error);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>statusMessage.textContent = "Error sending message. Check connection.";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- UI RENDERING ---</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function renderMessage(message) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const div = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>div.classList.add('chat-message', 'border', 'border-gray-800');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Simple color assignment based on user UID (to distinguish users)</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const hue = message.color ? (parseInt(message.color.substring(0, 8), 16) % 360) : 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const userColor = `hsl(${hue}, 80%, 65%)`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const timestamp = message.timestamp ? new Date(message.timestamp.seconds * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '...';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// HTML content for the message bubble</p>
+<p class="p1"><span class="Apple-converted-space">            </span>div.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between items-center text-xs text-gray-400 mb-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="chat-author font-bold" style="color: ${userColor};"&gt;${message.author}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span&gt;${timestamp}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-sm text-gray-200"&gt;${message.text}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>chatContainer.appendChild(div);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function setupUI() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Event listeners</p>
+<p class="p1"><span class="Apple-converted-space">            </span>joinBtn.addEventListener('click', async () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const name = nameInput.value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (name.length &lt; 3) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>statusMessage.textContent = "Name must be at least 3 characters.";</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>userName = name;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// 1. Initialize Firebase and sign in</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const success = await initFirebase();</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (success) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// 2. Hide setup, show chat</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>setupScreen.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>chatContainerWrapper.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>statusMessage.textContent = "";</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// 3. Start listening for messages</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>startChatListener();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>sendBtn.addEventListener('click', sendMessage);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>messageInput.addEventListener('keydown', (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (e.key === 'Enter') {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>sendMessage();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- INITIALIZATION ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Wait for the DOM to be fully loaded before starting the setup</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.addEventListener('DOMContentLoaded', setupUI);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
