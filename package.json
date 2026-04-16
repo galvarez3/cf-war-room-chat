@@ -1,0 +1,15 @@
+{
+  "name": "cf-war-room-chat",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "War Room Chat - Firebase-backed chat UI for Chasin' Feathers.",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "jsdom": "^24.1.0",
+    "vitest": "^1.6.0"
+  }
+}

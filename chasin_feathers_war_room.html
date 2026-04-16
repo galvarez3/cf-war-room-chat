@@ -235,23 +235,42 @@
 <p class="p1"><span class="Apple-converted-space">        </span>// --- UI RENDERING ---</p>
 <p class="p2"><br></p>
 <p class="p1"><span class="Apple-converted-space">        </span>function renderMessage(message) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// SECURITY: build the bubble with createElement + textContent so that</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// hostile `author`/`text` fields from Firestore cannot be parsed as HTML.</p>
 <p class="p1"><span class="Apple-converted-space">            </span>const div = document.createElement('div');</p>
 <p class="p1"><span class="Apple-converted-space">            </span>div.classList.add('chat-message', 'border', 'border-gray-800');</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>// Simple color assignment based on user UID (to distinguish users)</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const hue = message.color ? (parseInt(message.color.substring(0, 8), 16) % 360) : 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Hue derived from the first 8 hex chars of the UID.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const parsedHue = (typeof message.color === 'string' &amp;&amp; message.color.length &gt; 0)</p>
+<p class="p1"><span class="Apple-converted-space">                </span>? (parseInt(message.color.substring(0, 8), 16) % 360)</p>
+<p class="p1"><span class="Apple-converted-space">                </span>: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const hue = Number.isFinite(parsedHue) ? parsedHue : 0;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>const userColor = `hsl(${hue}, 80%, 65%)`;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>const timestamp = message.timestamp ? new Date(message.timestamp.seconds * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '...';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const timestamp = (message.timestamp &amp;&amp; typeof message.timestamp.seconds === 'number')</p>
+<p class="p1"><span class="Apple-converted-space">                </span>? new Date(message.timestamp.seconds * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })</p>
+<p class="p1"><span class="Apple-converted-space">                </span>: '...';</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>// HTML content for the message bubble</p>
-<p class="p1"><span class="Apple-converted-space">            </span>div.innerHTML = `</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between items-center text-xs text-gray-400 mb-1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="chat-author font-bold" style="color: ${userColor};"&gt;${message.author}&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span&gt;${timestamp}&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-sm text-gray-200"&gt;${message.text}&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const header = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>header.className = 'flex justify-between items-center text-xs text-gray-400 mb-1';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const authorSpan = document.createElement('span');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>authorSpan.className = 'chat-author font-bold';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>authorSpan.style.color = userColor;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>authorSpan.textContent = message.author == null ? '' : String(message.author);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const timeSpan = document.createElement('span');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>timeSpan.textContent = timestamp;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>header.appendChild(authorSpan);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>header.appendChild(timeSpan);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const body = document.createElement('p');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>body.className = 'text-sm text-gray-200';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>body.textContent = message.text == null ? '' : String(message.text);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>div.appendChild(header);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>div.appendChild(body);</p>
 <p class="p1"><span class="Apple-converted-space">            </span>chatContainer.appendChild(div);</p>
 <p class="p1"><span class="Apple-converted-space">        </span>}</p>
 <p class="p2"><br></p>
